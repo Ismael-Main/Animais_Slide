@@ -5,3 +5,4 @@ slide.init();
 
 console.log(slide);
 slide.trocaSlide(3);
+slide.activeAnteriorSlide();

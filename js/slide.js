@@ -4,6 +4,9 @@ export default class Slide {
     this.wrapper = document.querySelector(wrapper);
     this.dist = { finalPosition: 0, startX: 0, movement: 0 };
   }
+  transicao(active) {
+    this.slide.style.transition = active ? 'transform .3s' : '';
+  }
 
   moveSlide(distX) {
     this.dist.movePosition = distX;
@@ -26,6 +29,7 @@ export default class Slide {
       tipoMovimento = 'touchmove';
     }
     this.wrapper.addEventListener(tipoMovimento, this.quandoMove);
+    this.transicao(false);
   }
 
   quandoMove(event) {
@@ -42,6 +46,18 @@ export default class Slide {
       event.type === 'mouseup' ? 'mousemove' : 'touchmove';
     this.wrapper.removeEventListener('mousemove', this.quandoMove);
     this.dist.finalPosition = this.dist.movePosition;
+    this.transicao(true);
+    this.mudaSlideQuandoTermina();
+  }
+
+  mudaSlideQuandoTermina() {
+    if (this.dist.movement > 120 && this.index.proximo !== undefined) {
+      this.activeProximoSlide();
+    } else if (this.dist.movement < -120 && this.index.anterior !== undefined) {
+      this.activeAnteriorSlide();
+    } else {
+      this.trocaSlide(this.index.active);
+    }
   }
 
   addSlideEventos() {
@@ -88,9 +104,15 @@ export default class Slide {
     this.slidesIndexNavegacao(index);
     this.dist.finalPosition = slideAtivo.posicao;
   }
-
+  activeAnteriorSlide() {
+    if (this.index.anterior !== undefined) this.trocaSlide(this.index.anterior);
+  }
+  activeProximoSlide() {
+    if (this.index.proximo !== undefined) this.trocaSlide(this.index.proximo);
+  }
   init() {
     this.bindEventos();
+    this.transicao(true);
     this.addSlideEventos();
     this.slidesConfig();
     return this;
