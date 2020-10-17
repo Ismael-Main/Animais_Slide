@@ -1,37 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Slide Curso JavaScript</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AutoBook - Fotos dos clássicos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <ul class="custom-controls">
-    <li><img src="img/foto1-thumb.jpg" alt=""></li>
-    <li><img src="img/foto2-thumb.jpg" alt=""></li>
-    <li><img src="img/foto3-thumb.jpg" alt=""></li>
-    <li><img src="img/foto4-thumb.jpg" alt=""></li>
-    <li><img src="img/foto5-thumb.jpg" alt=""></li>
-    <li><img src="img/foto6-thumb.jpg" alt=""></li>
-  </ul>
-  <div class="slide-wrapper">
-    <ul class="slide">
-      <li><img src="./img/foto1.jpg" alt=""></li>
-      <li><img src="./img/foto2.jpg" alt=""></li>
-      <li><img src="./img/foto3.jpg" alt=""></li>
-      <li><img src="./img/foto4.jpg" alt=""></li>
-      <li><img src="./img/foto5.jpg" alt=""></li>
-      <li><img src="./img/foto6.jpg" alt=""></li>
+  <header>
+    <div class="menu-top">
+    </div>
+    <div class="menu-container">
+      <div class="logo">
+        <h1>AutoBook</h1>
+      </div>
+    </div>
+    <div class="menu-bottom">
+      <div class="menu-nav">
+        <div class="menu-mobile-icone">
+          <a class="botao-menu" href="#"><img src="./img/icones/menu.png" alt=""></a>
+        </div>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#carros">Carros</a></li>
+          <li><a href="#motos">Motos</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--menu-mobile-->
+    <div class="menu-mobile">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#carros">Carros</a></li>
+        <li><a href="#motos">Motos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+
+  </header>
+
+  <section id="slide">
+    <ul class="custom-controls">
+      <li><img src="img/thumbs/foto1-t.jpg" alt=""></li>
+      <li><img src="img/thumbs/foto2-t.jpg" alt=""></li>
+      <li><img src="img/thumbs/foto3-t.jpg" alt=""></li>
+      <li><img src="img/thumbs/foto4-t.jpg" alt=""></li>
+      <li><img src="img/thumbs/foto5-t.jpg" alt=""></li>
+      <li><img src="img/thumbs/foto6-t.jpg" alt=""></li>
     </ul>
-  </div>
-  <div class="arrow-nav">
-    <button class="prev"></button>
-    <button class="next"></button>
-  </div>
-  <script type='module' src="./js/script.js"></script>
+    <div class="slide-wrapper">
+      <ul class="slide">
+        <li><img src="img/foto1.jpg" alt=""></li>
+        <li><img src="img/foto2.jpg" alt=""></li>
+        <li><img src="img/foto3.jpg" alt=""></li>
+        <li><img src="img/foto4.jpg" alt=""></li>
+        <li><img src="img/foto5.jpg" alt=""></li>
+        <li><img src="img/foto6.jpg" alt=""></li>
+      </ul>
+    </div>
+    <div class="arrow-nav">
+      <button class="prev"></button>
+      <button class="next"></button>
+    </div>
+  </section>
+  <section id="sobre">
+    <h2 class="titulo">Sobre</h2>
+    <div class="sobre-container">
+      <div class="sobre">
+        <div>
+          <h1>Para que serve esse site?</h1>
+          <p>Esse site foi criado para fins de testes, aqui você poderá ver fotos de carros e motos clássicos e ver como funciona um site simples de portfólio de exposição, esse site tem como base o slide responsivo criado no curso de JavaScript da Origamid, todas as fotos foram tiradas gratuitamente do site unsplash.com onde estão as melhores fotos free da web.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="criador">
+    <h2 class="titulo">Criador</h2>
+    <div class="criador-container">
+      <div class="criador">
+        <div>
+          <h1>Quem criou esse site?</h1>
+          <p>Meu nome é Ismael Borges, tenho 20 anos e estou cursando Análise e Desenvolvimento de sistemas, sou desenvolvedor web e apaixonado por webdesign e tipográfias. O back-end desse site foi feito no curso de JavaScript disponível em "Origamid.com".</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="contato">
+    <h2 class="titulo">Contatos</h2>
+    <div class="contato-container">
+      <div class="contato">
+        <span>Email: ismaelbb26@gmail.com</span>
+
+        <span>Telefone: (35) 984381361</span>
+
+        <span>WhatsApp: +55 (35)984381361</span>
+      </div>
+  </section>
+  <footer>
+    <div class="footer">
+      <p>AutoBook - Alguns direitos reservados - 2020</p>
+    </div>
+  </footer>
+  <script type="module" src="js/script.js"></script>
 </body>
 
 </html>
